@@ -276,5 +276,6 @@ struct Pattern
 			}
 			sectionHeader++;
 		}
+		return 0;
 	}
 };
