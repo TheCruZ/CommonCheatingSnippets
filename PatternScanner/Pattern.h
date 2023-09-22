@@ -8,6 +8,9 @@
 * Pattern::Scan(Start, memLength, "AA BB CC ? ? ? ? ? DD EE ? ? ? ? ? FF")
 */
 
+#ifndef PATTERNSC_H
+#define PATTERNSC_H
+
 #ifndef _KERNEL_MODE
 #include <Windows.h>
 #include <vector>
@@ -279,3 +282,5 @@ struct Pattern
 		return 0;
 	}
 };
+
+#endif

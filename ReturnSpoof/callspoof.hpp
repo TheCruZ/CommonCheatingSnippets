@@ -1,3 +1,8 @@
+#pragma once
+
+#ifndef CALL_SPOOF_HPP
+#define CALL_SPOOF_HPP
+
 #pragma warning(disable: 4083)
 #pragma warning(disable: 4005)
 
@@ -145,3 +150,5 @@ static inline auto spoof_call(
 	using mapper = detail::argument_remapper<sizeof...(Args), void>;
 	return mapper::template do_call<Ret, Args...>((const void*)&detail::_spoofer_stub, &p, args...);
 }
+
+#endif

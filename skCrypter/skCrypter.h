@@ -12,6 +12,10 @@ skCrypter
 							*Not removing this part is appreciated*
 ____________________________________________________________________________________________________________*/
 
+
+#ifndef SKCRYP_H
+#define SKCRYP_H
+
 #ifdef _KERNEL_MODE
 #pragma warning(disable: 4083)
 #pragma warning(disable: 4005)
@@ -132,3 +136,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ________________________________________________________________________________*/
+
+
+#endif

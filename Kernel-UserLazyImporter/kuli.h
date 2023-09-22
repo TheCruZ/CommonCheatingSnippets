@@ -26,6 +26,9 @@
 
 #ifdef _KERNEL_MODE
 
+#ifndef KLAZY_IMPORTER_HPP
+#define KLAZY_IMPORTER_HPP
+
 //https://github.com/hypervisor/kli
 #include <intrin.h>
 #include <ntimage.h>
@@ -345,6 +348,8 @@ namespace kli {
 #define LI_FN(name) ((decltype(&##name))(::kli::find_kernel_export<KLI_HASH_STR(#name)>()))
 #else
 #define LI_FN(name) ((decltype(&##name))(::kli::find_kernel_export_cached<KLI_HASH_STR(#name)>()))
+#endif
+
 #endif
 
 #else
