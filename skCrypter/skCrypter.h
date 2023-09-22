@@ -13,41 +13,11 @@ skCrypter
 ____________________________________________________________________________________________________________*/
 
 #ifdef _KERNEL_MODE
-	namespace std
-	{
-		// STRUCT TEMPLATE remove_reference
-		template <class _Ty>
-		struct remove_reference {
-			using type = _Ty;
-		};
-
-		template <class _Ty>
-		struct remove_reference<_Ty&> {
-			using type = _Ty;
-		};
-
-		template <class _Ty>
-		struct remove_reference<_Ty&&> {
-			using type = _Ty;
-		};
-
-		template <class _Ty>
-		using remove_reference_t = typename remove_reference<_Ty>::type;
-
-		// STRUCT TEMPLATE remove_const
-		template <class _Ty>
-		struct remove_const { // remove top-level const qualifier
-			using type = _Ty;
-		};
-
-		template <class _Ty>
-		struct remove_const<const _Ty> {
-			using type = _Ty;
-		};
-
-		template <class _Ty>
-		using remove_const_t = typename remove_const<_Ty>::type;
-	}
+#pragma warning(disable: 4083)
+#pragma warning(disable: 4005)
+#include <xtr1common>
+#pragma warning(default: 4083)
+#pragma warning(default: 4005)
 #else
 	#include <type_traits>
 #endif
