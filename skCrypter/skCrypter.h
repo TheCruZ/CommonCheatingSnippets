@@ -100,6 +100,7 @@ namespace skc
 	};
 }
 
+//For Kernel mode __TIME__ has to be enabled by setting "Project properties" -> "Driver Setting" -> "Driver Model" -> "Allow Date, Time and TimeStamp".
 #define skCrypt(str) skCrypt_key(str, __TIME__[4], __TIME__[7])
 #define skCrypt_key(str, key1, key2) []() { \
 			constexpr static auto crypted = skc::skCrypter \
