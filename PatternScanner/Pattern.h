@@ -104,7 +104,7 @@ struct Pattern
 #endif
 
 	//Always usefull
-	PVOID ResolveRelativeAddress(PVOID Instruction, ULONG OffsetOffset, ULONG InstructionSize)
+	static PVOID ResolveRelativeAddress(PVOID Instruction, ULONG OffsetOffset, ULONG InstructionSize)
 	{
 		ULONG_PTR Instr = (ULONG_PTR)Instruction;
 		LONG RipOffset = *(PLONG)(Instr + OffsetOffset);
